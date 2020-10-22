@@ -89,14 +89,34 @@ function App() {
 		<div className='App'>
 			<Header />
 			<Switch>
-				<Route exact path='/'>
-					<Playlist songs={songs} selectSong={selectSong} deleteSong={deleteSong} />
-					<Favoritesong favoriteSongs={favoriteSongs} />
-          <AddNewSong song={emptySong} handleSubmit={handleCreate} />
-				</Route>
-        <Route exact path='/edit'>
-          <Edit label='update' song={selectedSong} handleSubmit={handleUpdate} />
-        </Route>
+				<Route
+					exact
+					path='/'
+					render={(rp) => (
+						<>
+							<Playlist
+								{...rp}
+								songs={songs}
+								selectSong={selectSong}
+								deleteSong={deleteSong}
+							/>
+							<Favoritesong {...rp} favoriteSongs={favoriteSongs} />
+							<AddNewSong song={emptySong} handleSubmit={handleCreate} />
+						</>
+					)}
+				/>
+
+				<Route
+					exact
+					path='/edit'
+					render={(rp) => (
+						<Edit
+							{...rp}
+							label='update'
+							song={selectedSong}
+							handleSubmit={handleUpdate}
+						/>
+					)} />
 			</Switch>
 		</div>
 	);
