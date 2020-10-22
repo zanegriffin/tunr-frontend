@@ -1,4 +1,4 @@
-import './AddNewSong.scss'
+import React from 'react'
 
 export const AddNewSong = (props) => {
     return(

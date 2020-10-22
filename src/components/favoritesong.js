@@ -1,3 +1,4 @@
+import React from 'react';
 import './Favoritesong.scss'
 
 export const Favoritesong = (props) => {
