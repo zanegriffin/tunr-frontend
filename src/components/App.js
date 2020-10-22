@@ -32,7 +32,7 @@ function App() {
   };
 
   const getFaves = () => {
-    fetch(url + '/favorites/')
+    fetch(url + '/songs/favorites/')
     .then((response) => response.json())
     .then((data) => {
       setFavoriteSongs(data);
