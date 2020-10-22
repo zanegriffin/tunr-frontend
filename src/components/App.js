@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import './App.scss';
-import {Header} from './Header'
-import {Playlist} from './Playlist'
-import {Favoritesong} from './Favoritesong'
-import {Edit} from './Edit'
+import {Header} from './header'
+import {Playlist} from './playlist'
+import {Favoritesong} from './favoritesong'
+import {Edit} from './edit'
 import {AddNewSong} from './AddNewSong'
 import { Route, Switch } from 'react-router-dom';
 
@@ -56,13 +56,17 @@ function App() {
 
     //changes isFavorite = !isFavorite
   const handleToggle = (song) => {
-    fetch(url + '/songs/' + song._id, {
-      method: 'put',
+    console.log('toggle', song)
+    fetch(url + '/songs/favorites/' + song._id, {
+      method: 'put', 
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(song)
-    }).then(() => getFaves())
+    }).then(() => {
+      getFaves()
+      getSongs()
+    })
   }
 
   const handleUpdate = (song) => {
@@ -90,7 +94,7 @@ function App() {
 			<Header />
 			<Switch>
 				<Route exact path='/'>
-					<Playlist songs={songs} selectSong={selectSong} deleteSong={deleteSong} />
+					<Playlist songs={songs} selectSong={selectSong} deleteSong={deleteSong} handleToggle={handleToggle}/>
 					<Favoritesong favoriteSongs={favoriteSongs} />
           <AddNewSong song={emptySong} handleSubmit={handleCreate} />
 				</Route>
