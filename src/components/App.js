@@ -41,6 +41,7 @@ function App() {
 
   useEffect(() => {
     getSongs();
+    getFaves();
   });
 
   const handleCreate = (newSong) => {

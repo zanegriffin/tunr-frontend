@@ -1,5 +1,6 @@
+import React from 'react';
 import './Playlist.scss'
-import {Song} from './AddNewSong'
+import {Song} from './Song'
 
 export const Playlist = (props) => {
     return(
