@@ -5,12 +5,14 @@ import {Playlist} from './Playlist'
 import {Favoritesong} from './Favoritesong'
 import {Edit} from './Edit'
 import {AddNewSong} from './AddNewSong'
-import { Route, Link, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 function App() {
   const url = 'http://localhost:4500';
 
   const [songs, setSongs] = useState([]);
+  const [favSongs, setFavSongs] = useState({});
+
   const emptySong = {
     title: '',
     time: '',
@@ -66,11 +68,12 @@ function App() {
 			<Header />
 			<Switch>
 				<Route exact path='/'>
-					<Playlist />
-					<Favoritesong />
+					<Playlist songs={songs} selectSong={selectSong} deleteSong={deleteSong} />
+					<Favoritesong favSongs={favSongs} />
+          <AddNewSong song={emptySong} handleSubmit={handleCreate} />
 				</Route>
         <Route exact path='/edit'>
-          <Edit />
+          <Edit label='update' song={selectedSong} handleSubmit={handleUpdate} />
         </Route>
 			</Switch>
 		</div>
