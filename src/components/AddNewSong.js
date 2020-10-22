@@ -1,4 +1,4 @@
-
+import './AddNewSong.scss'
 
 export const AddNewSong = (props) => {
     return(
