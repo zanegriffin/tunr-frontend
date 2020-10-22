@@ -5,7 +5,7 @@ export const Song = (props) => {
 	return (
 		<div>
 			<div>
-				<h3 onClick={() => props.handleToggle(props.song)}>{props.song.title}</h3>
+				<h3>{props.song.title}</h3>
 				<div>
                     <button onClick={() => {
                         props.selectSong(props.song);
@@ -13,6 +13,9 @@ export const Song = (props) => {
 					<button onClick={() => {
                         props.deleteSong(props.song);
                     }}>Delete</button>
+                    <button onClick={() => props.handleToggle(props.song)}>
+                        Favorite
+                    </button>
 				</div>
 			</div>
 			<h5>{props.song.artist}</h5>
