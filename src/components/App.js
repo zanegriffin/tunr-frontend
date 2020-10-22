@@ -8,7 +8,8 @@ import {AddNewSong} from './AddNewSong'
 import { Route, Switch } from 'react-router-dom';
 
 function App() {
-  const url = 'http://localhost:4500';
+  const url =
+		'https://cors-anywhere.herokuapp.com/https://tunr-backend-rubicon.herokuapp.com/';
 
   const [songs, setSongs] = useState([]);
   const [favoriteSongs, setFavoriteSongs] = useState([]);
@@ -78,7 +79,7 @@ function App() {
 			<Switch>
 				<Route exact path='/'>
 					<Playlist songs={songs} selectSong={selectSong} deleteSong={deleteSong} />
-					<Favoritesong favoriteSongs={favSongs} />
+					<Favoritesong favoriteSongs={favoriteSongs} />
           <AddNewSong song={emptySong} handleSubmit={handleCreate} />
 				</Route>
         <Route exact path='/edit'>
