@@ -4,7 +4,7 @@ import {Song} from './Song'
 
 export const Favoritesong = (props) => {
 
-    const {songs} = props
+    const {favoriteSongs} = props
     const loading = <h1></h1>
 
     return(
@@ -13,7 +13,7 @@ export const Favoritesong = (props) => {
             <h4>Song</h4>
             <h4>Artist</h4>
             <h4>Time</h4>
-            <div>{songs === undefined ? loading : songs.map((song) => {
+            <div>{favoriteSongs === undefined ? loading : favoriteSongs.map((song) => {
                 return (
                     <Song song={song} selectSong={props.selectSong} deleteSong={props.deleteSong} handleToggle={props.handleToggle} history={props.history} />
                 )

@@ -95,7 +95,7 @@ function App() {
 			<Switch>
 				<Route exact path='/'>
 					<Playlist songs={songs} selectSong={selectSong} deleteSong={deleteSong} handleToggle={handleToggle}/>
-					<Favoritesong favoriteSongs={favoriteSongs} />
+					<Favoritesong favoriteSongs={favoriteSongs} selectSong={selectSong} deleteSong={deleteSong} handleToggle={handleToggle}/>
           <AddNewSong song={emptySong} handleSubmit={handleCreate} />
 				</Route>
         <Route exact path='/edit'>
