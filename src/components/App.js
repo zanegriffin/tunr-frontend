@@ -4,7 +4,7 @@ import {Header} from './Header'
 import {Playlist} from './Playlist'
 import {Favoritesong} from './Favoritesong'
 import {Edit} from './Edit'
-import {AddNewSong} from './AddNewSong'
+// import {AddNewSong} from './AddNewSong'
 import { Route, Switch } from 'react-router-dom';
 
 function App() {
