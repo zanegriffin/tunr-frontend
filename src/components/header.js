@@ -1,3 +1,5 @@
+import './Header.scss'
+
 export const Header = (props) => {
     return(
         <header>
