@@ -107,13 +107,24 @@ function App() {
 							/>
 							<Favoritesong
 								{...rp}
-								 favoriteSongs={favoriteSongs}
+								favoriteSongs={favoriteSongs}
 								selectSong={selectSong}
 								deleteSong={deleteSong}
 								handleToggle={handleToggle}
 							/>
 							{/* <AddNewSong song={emptySong} handleSubmit={handleCreate} /> */}
-              <Edit {...rp} label='create' song={emptySong} handleSubmit={handleCreate} />
+							<div className='new-song-body'>
+								<h1>ADD A NEW SONG</h1>
+								<div className='input-boxes'>
+                  <Edit
+								{...rp}
+								label='create'
+								song={emptySong}
+								handleSubmit={handleCreate}
+							/>
+								</div>
+							</div>
+							
 						</>
 					)}
 				/>
