@@ -4,7 +4,7 @@ export const Song = (props) => {
 	return (
 		<div>
 			<div>
-				<h3>{props.song.title}</h3>
+				<h3 onClick={() => props.handleToggle(props.song)}>{props.song.title}</h3>
 				<div>
                     <button onClick={() => {
                         props.selectSong(props.song);
