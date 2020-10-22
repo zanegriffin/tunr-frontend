@@ -122,6 +122,14 @@ function App() {
 						/>
 					)}
 				/>
+				<Route exact path='/'>
+					<Playlist songs={songs} selectSong={selectSong} deleteSong={deleteSong} handleToggle={handleToggle}/>
+					<Favoritesong favoriteSongs={favoriteSongs} selectSong={selectSong} deleteSong={deleteSong} handleToggle={handleToggle}/>
+          <AddNewSong song={emptySong} handleSubmit={handleCreate} />
+				</Route>
+        <Route exact path='/edit'>
+          <Edit label='update' song={selectedSong} handleSubmit={handleUpdate} />
+        </Route>
 			</Switch>
 		</div>
 	);
