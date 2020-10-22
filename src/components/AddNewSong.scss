@@ -1,0 +1,19 @@
+.new-song-body {
+    .input-boxes{
+        margin: auto;
+        width: 70%;
+        max-width: 450px;
+        h3 {
+            text-align: left;
+        }
+        input {
+            
+            width: 100%;
+        }
+    }
+    button {
+        height: 35px;
+        margin-top: 20px;
+        color: orangered;
+    }
+}
