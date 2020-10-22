@@ -54,6 +54,17 @@ function App() {
     }).then((response) => getSongs());
   };
 
+    //changes isFavorite = !isFavorite
+  const handleToggle = (song) => {
+    fetch(url + '/songs/' + song._id, {
+      method: 'put',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(song)
+    }).then(() => getFaves())
+  }
+
   const handleUpdate = (song) => {
     fetch(url + '/songs/' + song._id, {
       method: 'put',
