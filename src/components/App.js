@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import './App.scss';
 import {Header} from './Header'
-import {Playlist} from './playlist'
-import {Favoritesong} from './favoritesong'
+import {Playlist} from './Playlist'
+import {Favoritesong} from './Favoritesong'
 import {Edit} from './Edit'
 import {AddNewSong} from './AddNewSong'
 import { Route, Switch } from 'react-router-dom';
