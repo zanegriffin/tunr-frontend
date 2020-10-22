@@ -4,7 +4,7 @@ import './App.scss';
 import {Header} from './Header'
 import {Playlist} from './Playlist'
 import {Favoritesong} from './Favoritesong'
-import {Song} from './Song'
+import {Song} from './AddNewSong'
 
 function App() {
   return (
