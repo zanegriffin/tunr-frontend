@@ -112,7 +112,8 @@ function App() {
 								deleteSong={deleteSong}
 								handleToggle={handleToggle}
 							/>
-							<AddNewSong song={emptySong} handleSubmit={handleCreate} />
+							{/* <AddNewSong song={emptySong} handleSubmit={handleCreate} /> */}
+              <Edit {...rp} label='create' song={emptySong} handleSubmit={handleCreate} />
 						</>
 					)}
 				/>
