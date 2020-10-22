@@ -9,7 +9,7 @@ import { Route, Switch } from 'react-router-dom';
 
 function App() {
   const url =
-		'https://cors-anywhere.herokuapp.com/https://tunr-backend-rubicon.herokuapp.com/';
+		'https://tunr-backend-rubicon.herokuapp.com';
 
   const [songs, setSongs] = useState([]);
   const [favoriteSongs, setFavoriteSongs] = useState([]);
@@ -42,7 +42,7 @@ function App() {
   useEffect(() => {
     getSongs();
     getFaves();
-  });
+  },[]);
 
   const handleCreate = (newSong) => {
     fetch(url + '/songs/', {
@@ -53,6 +53,17 @@ function App() {
       body: JSON.stringify(newSong)
     }).then((response) => getSongs());
   };
+
+    //changes isFavorite = !isFavorite
+  const handleToggle = (song) => {
+    fetch(url + '/songs/' + song._id, {
+      method: 'put',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(song)
+    }).then(() => getFaves())
+  }
 
   const handleUpdate = (song) => {
     fetch(url + '/songs/' + song._id, {
