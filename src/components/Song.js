@@ -2,6 +2,7 @@ import React from 'react';
 import './Song.scss'
 
 export const Song = (props) => {
+    
 	return (
 		<div className='song-body'>	
 			<div className='title-artist-time'>
