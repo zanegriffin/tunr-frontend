@@ -8,7 +8,7 @@ export const Song = (props) => {
 				<div>
                     <button onClick={() => {
                         props.selectSong(props.song);
-                        props.history.push('/edit')}}>Edit</button>
+                        props.history.push('/edit');}}>Edit</button>
 					<button onClick={() => {
                         props.deleteSong(props.song);
                     }}>Delete</button>
