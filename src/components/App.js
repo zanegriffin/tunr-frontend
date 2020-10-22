@@ -3,7 +3,8 @@ import './App.scss';
 import {Header} from './Header'
 import {Playlist} from './Playlist'
 import {Favoritesong} from './Favoritesong'
-import {Song} from './Song'
+import {Edit} from './Edit'
+import {AddNewSong} from './AddNewSong'
 import { Route, Link, Switch } from 'react-router-dom';
 
 function App() {
@@ -61,13 +62,19 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <Header />
-      <Playlist />
-      <Favoritesong />
-      <Song />
-    </div>
-  );
+		<div className='App'>
+			<Header />
+			<Switch>
+				<Route exact path='/'>
+					<Playlist />
+					<Favoritesong />
+				</Route>
+        <Route exact path='/edit'>
+          <Edit />
+        </Route>
+			</Switch>
+		</div>
+	);
 }
 
 export default App;
