@@ -11,12 +11,13 @@ function App() {
   const url = 'http://localhost:4500';
 
   const [songs, setSongs] = useState([]);
-  const [favSongs, setFavSongs] = useState({});
+  const [favoriteSongs, setFavoriteSongs] = useState([]);
 
   const emptySong = {
     title: '',
     time: '',
-    artist: ''
+    artist: '',
+    isFavorite: false,
   }
 
   const [selectedSong, setSelectedSong] = useState(emptySong);
@@ -26,6 +27,14 @@ function App() {
     .then((response) => response.json())
     .then((data) => {
       setSongs(data);
+    });
+  };
+
+  const getFaves = () => {
+    fetch(url + '/favorites/')
+    .then((response) => response.json())
+    .then((data) => {
+      setFavoriteSongs(data);
     });
   };
 
@@ -69,7 +78,7 @@ function App() {
 			<Switch>
 				<Route exact path='/'>
 					<Playlist songs={songs} selectSong={selectSong} deleteSong={deleteSong} />
-					<Favoritesong favSongs={favSongs} />
+					<Favoritesong favoriteSongs={favSongs} />
           <AddNewSong song={emptySong} handleSubmit={handleCreate} />
 				</Route>
         <Route exact path='/edit'>
