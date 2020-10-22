@@ -1,0 +1,25 @@
+.song-body {
+    border-style: solid;
+    max-width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .title-artist-time {
+        border-style: solid;
+        display: flex;
+        justify-content: space-between;
+        .title-artist{
+            border-style: solid;
+            max-width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    .buttons {
+        text-align: left;
+        button {
+            
+        }
+    }
+}

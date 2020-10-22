@@ -1,6 +1,9 @@
 .playlist-body {
+    border-style: solid;
+    border-color: orangered;
+    max-width: 100%;
     .playlist-panel {
-        display: flex;
-        flex-direction: column;
+        border-style: solid;
+        border-color: blue;
     }
 }
