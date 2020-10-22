@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import './App.scss';
 import {Header} from './Header'
 import {Playlist} from './playlist'
-import {Favoritesong} from './Favoritesong'
+import {Favoritesong} from './favoritesong'
 import {Edit} from './Edit'
 import {AddNewSong} from './AddNewSong'
 import { Route, Switch } from 'react-router-dom';
@@ -105,7 +105,13 @@ function App() {
 								deleteSong={deleteSong}
 								handleToggle={handleToggle}
 							/>
-							<Favoritesong {...rp} favoriteSongs={favoriteSongs} />
+							<Favoritesong
+								{...rp}
+								 favoriteSongs={favoriteSongs}
+								selectSong={selectSong}
+								deleteSong={deleteSong}
+								handleToggle={handleToggle}
+							/>
 							<AddNewSong song={emptySong} handleSubmit={handleCreate} />
 						</>
 					)}
@@ -122,14 +128,6 @@ function App() {
 						/>
 					)}
 				/>
-				<Route exact path='/'>
-					<Playlist songs={songs} selectSong={selectSong} deleteSong={deleteSong} handleToggle={handleToggle}/>
-					<Favoritesong favoriteSongs={favoriteSongs} selectSong={selectSong} deleteSong={deleteSong} handleToggle={handleToggle}/>
-          <AddNewSong song={emptySong} handleSubmit={handleCreate} />
-				</Route>
-        <Route exact path='/edit'>
-          <Edit label='update' song={selectedSong} handleSubmit={handleUpdate} />
-        </Route>
 			</Switch>
 		</div>
 	);
