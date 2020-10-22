@@ -9,7 +9,7 @@ export const Playlist = (props) => {
 				<h2>Playlist</h2>
 				<div className='playlist-panel'>
 					{songs.map((song) => (
-						<Song song={song} selectSong={props.selectSong} deleteSong={props.deleteSong} history={props.history} />
+						<Song song={song} selectSong={props.selectSong} deleteSong={props.deleteSong} handleToggle={props.handleToggle} history={props.history} />
 					))}
 				</div>
 			</div>
