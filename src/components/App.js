@@ -9,7 +9,7 @@ import { Route, Switch } from 'react-router-dom';
 
 function App() {
   const url =
-		'https://tunr-backend-rubicon.herokuapp.com';
+		'https://tunr-on-rails.herokuapp.com';
 
   const [songs, setSongs] = useState([]);
   const [favoriteSongs, setFavoriteSongs] = useState([]);
@@ -32,10 +32,12 @@ function App() {
   };
 
   const getFaves = () => {
-    fetch(url + '/songs/favorites/')
+    fetch(url + '/songs/')
     .then((response) => response.json())
     .then((data) => {
-      setFavoriteSongs(data);
+      const faves = data.filter(song => song.is_favorite === true)
+      // console.log(faves)
+      setFavoriteSongs(faves)
     });
   };
 
@@ -57,7 +59,9 @@ function App() {
     //changes isFavorite = !isFavorite
   const handleToggle = (song) => {
     console.log('toggle', song)
-    fetch(url + '/songs/favorites/' + song._id, {
+    song.is_favorite = !song.is_favorite
+    console.log(song.is_favorite)
+    fetch(url + '/songs/' + song.id, {
       method: 'put', 
       headers: {
         'Content-Type': 'application/json'
@@ -70,7 +74,7 @@ function App() {
   }
 
   const handleUpdate = (song) => {
-    fetch(url + '/songs/' + song._id, {
+    fetch(url + '/songs/' + song.id, {
       method: 'put',
       headers: {
         'Content-Type': 'application/json'
