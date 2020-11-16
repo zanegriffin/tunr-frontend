@@ -1,5 +1,4 @@
 import React from 'react';
-import './Favoritesong.scss'
 import {Song} from './Song'
 
 export const Favoritesong = (props) => {
@@ -8,7 +7,7 @@ export const Favoritesong = (props) => {
     const loading = <h1></h1>
 
     return(
-        <div>
+        <div className='favorites'>
             <h1>Favorite Songs List</h1>
             <div>{favoriteSongs === undefined ? loading : favoriteSongs.map((song) => {
                 return (

@@ -1,12 +1,11 @@
 import React from 'react';
-import './Playlist.scss'
 import {Song} from './Song'
 
 export const Playlist = (props) => {
     const {songs} = props;
     const loaded = () => (
 			<div className='playlist-body'>
-				<h2>Playlist</h2>
+				<h2>PLAYLIST</h2>
 				<div className='playlist-panel'>
 					{songs.map((song) => (
 						<Song song={song} selectSong={props.selectSong} deleteSong={props.deleteSong} handleToggle={props.handleToggle} history={props.history} />

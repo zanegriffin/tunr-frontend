@@ -141,7 +141,7 @@ function App() {
 					render={(rp) => (
 						<Edit
 							{...rp}
-							label='update'
+							label='UPDATE SONG'
 							song={selectedSong}
 							handleSubmit={handleUpdate}
 						/>

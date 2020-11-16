@@ -1,3 +1,145 @@
-* {
-    text-align: center;
+
+@import url('https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&family=Courier+Prime:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nobile:wght@700&family=Syne+Mono&family=Zilla+Slab:wght@700&display=swap');
+$Coda: 'Coda Caption', sans-serif;
+$Courier: 'Courier Prime', monospace;
+// $Nobile: 'Nobile', sans-serif;
+// $Syne: 'Syne Mono', monospace;
+$Zilla: 'Zilla Slab', serif;
+$red: #96223F;
+$lightblue: #457B9D;
+$black: #181925;
+$gray: #444444;
+$darkblue: #093D86;
+
+body{
+    background-color: whitesmoke;
+}
+
+.App{
+    padding: 30px;
+    margin: 20px auto;
+    box-shadow: 5px 5px 3px $black;
+    border-radius: 15px;
+    background-color: white;
+    max-width: 800px;
+}
+
+// header
+.header-body{
+    header{
+        h1{
+            color: $black;
+            font-family: $Coda;
+            letter-spacing: -4px;
+            font-size: 48px;
+            margin: 0;
+        }
+        h3{
+            color: $darkblue;
+            font-family: $Zilla;
+            text-align: right;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+    }
+    div{
+        height: 5px;
+        width: 100%;
+        // margin: 0 10px;
+        background-color: $red;
+    }
+}
+
+// playlist
+.playlist-body{
+    h2{
+        color: $gray;
+        font-family: $Coda;
+        letter-spacing: -4px;
+        font-size: 32px;
+    }
+    
+}
+
+// songs
+.song-body{
+    margin: 40px 20px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.title{
+    h3{
+        margin: 0;
+        font-family: $Courier;
+        font-size: 20px;
+        color: $lightblue;
+    }
+    p{
+        margin: 0;
+        font-family: $Courier;
+    }
+}
+.buttons{
+    display: flex;
+    flex-direction: row;
+    
+    h5{
+        margin: 0 10px;
+        font-family: $Courier;
+        font-size: 20px;
+        color: $gray;
+    }
+    div{
+        margin: 0 10px;
+        font-family: $Courier;
+        font-size: 20px;
+        color: $gray;
+    }
+}
+
+// fav list
+.favorites{
+    padding-top: 20px;
+    h1{
+        font-family: $Zilla;
+        letter-spacing: 2px;
+        color: $gray;
+    }
+
+}
+
+.new-song-body{
+
+    h1{
+        font-family: $Coda;
+        letter-spacing: -5px;
+        color: $gray;
+    }
+
+    .input-boxes{
+        form{
+            display: flex;
+            flex-direction: column;
+            h3{
+                font-family: $Zilla;
+                color: $lightblue;
+            }
+            input{
+                height: 40px;
+                border-radius: 10px;
+                border: 2px solid lightgrey;
+            }
+            input:last-of-type{
+                margin-top: 20px;
+                font-family: $Coda;
+                letter-spacing: -3px;
+                font-size: 23px;
+                color: white;
+                background-color: $red;
+                height: 60px;
+            }
+        }
+    }
 }

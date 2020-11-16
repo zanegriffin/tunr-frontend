@@ -12,25 +12,28 @@ export const Edit = (props) => {
     };
 	return (
 		<form onSubmit={handleSubmit}>
+            <h3>TITLE</h3>
             <input
                 type="text"
                 name="title"
                 value={formData.title}
                 onChange={handleChange}
             />
+            <h3>ARTIST</h3>
             <input
                 type="text"
                 name="artist"
                 value={formData.artist}
                 onChange={handleChange}
             />
+            <h3>TIME</h3>
             <input
                 type="text"
                 name="time"
                 value={formData.time}
                 onChange={handleChange}
             />
-            <input type='submit' value={props.label} />
+            <input type='submit' value={props.label === 'UPDATE SONG' ? props.label : 'ADD NEW SONG'} />
         </form>
 	);
 };
