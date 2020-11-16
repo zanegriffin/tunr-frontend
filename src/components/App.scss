@@ -43,7 +43,7 @@ body{
             letter-spacing: 1px;
         }
     }
-    div{
+    .header-border{
         height: 5px;
         width: 100%;
         // margin: 0 10px;
@@ -130,6 +130,8 @@ body{
                 height: 40px;
                 border-radius: 10px;
                 border: 2px solid lightgrey;
+                font-family: $Courier;
+                font-size: 20px;
             }
             input:last-of-type{
                 margin-top: 20px;
@@ -155,6 +157,8 @@ form{
         height: 40px;
         border-radius: 10px;
         border: 2px solid lightgrey;
+        font-family: $Courier;
+        font-size: 20px;
     }
     input:last-of-type{
         margin-top: 20px;
@@ -165,4 +169,184 @@ form{
         background-color: $red;
         height: 60px;
     }
+}
+
+
+// DARK MODE
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+.dark {
+
+.body{
+    background-color: $gray;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    right: 0;
+    overflow: auto;
+}
+
+.App{
+    padding: 30px;
+    margin: 20px auto;
+    box-shadow: 5px 5px 3px lightgray;
+    border-radius: 15px;
+    background-color: $black;
+    max-width: 800px;
+}
+
+// header
+.header-body{
+    header{
+        h1{
+            color: white;
+            font-family: $Coda;
+            letter-spacing: -4px;
+            font-size: 48px;
+            margin: 0;
+        }
+        h3{
+            color: $red;
+            font-family: $Zilla;
+            text-align: right;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+        div{
+            color: white;
+        }
+    }
+    .header-border{
+        height: 5px;
+        width: 100%;
+        // margin: 0 10px;
+        background-color: $darkblue;
+    }
+}
+
+// playlist
+.playlist-body{
+    h2{
+        color: lightgray;
+        font-family: $Coda;
+        letter-spacing: -4px;
+        font-size: 32px;
+    }
+    
+}
+
+// songs
+.song-body{
+    margin: 40px 20px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.title{
+    h3{
+        margin: 0;
+        font-family: $Courier;
+        font-size: 20px;
+        color: $lightblue;
+    }
+    p{
+        margin: 0;
+        font-family: $Courier;
+        color: $red;
+    }
+}
+.buttons{
+    display: flex;
+    flex-direction: row;
+    
+    h5{
+        margin: 0 10px;
+        font-family: $Courier;
+        font-size: 20px;
+        color: grey;
+    }
+    div{
+        margin: 0 10px;
+        font-family: $Courier;
+        font-size: 20px;
+        color: $gray;
+    }
+    div:nth-of-type(2){
+        color: $red;
+    }
+}
+
+// fav list
+.favorites{
+    padding-top: 20px;
+    h1{
+        font-family: $Zilla;
+        letter-spacing: 2px;
+        color: white;
+    }
+
+}
+
+.new-song-body{
+
+    h1{
+        font-family: $Coda;
+        letter-spacing: -5px;
+        color: white;
+    }
+
+    .input-boxes{
+        form{
+            display: flex;
+            flex-direction: column;
+            h3{
+                font-family: $Zilla;
+                color: $lightblue;
+            }
+            input{
+                height: 40px;
+                border-radius: 10px;
+                border: 2px solid lightgrey;
+                font-family: $Courier;
+                font-size: 20px;
+            }
+            input:last-of-type{
+                margin-top: 20px;
+                font-family: $Coda;
+                letter-spacing: -3px;
+                font-size: 23px;
+                color: white;
+                background-color: $red;
+                height: 60px;
+            }
+        }
+    }
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    h3{
+        font-family: $Zilla;
+        color: $lightblue;
+    }
+    input{
+        height: 40px;
+        border-radius: 10px;
+        border: 2px solid lightgrey;
+        font-family: $Courier;
+        font-size: 20px;
+    }
+    input:last-of-type{
+        margin-top: 20px;
+        font-family: $Coda;
+        letter-spacing: -3px;
+        font-size: 23px;
+        color: white;
+        background-color: $red;
+        height: 60px;
+    }
+}
 }

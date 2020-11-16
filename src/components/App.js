@@ -13,6 +13,7 @@ function App() {
 
   const [songs, setSongs] = useState([]);
   const [favoriteSongs, setFavoriteSongs] = useState([]);
+  const [toggle, setToggle] = React.useState(false)
 
   const emptySong = {
     title: '',
@@ -97,8 +98,10 @@ function App() {
   };
 
   return (
+    <div className={toggle ? 'dark' : ''}>
+    <div className='body'>
 		<div className='App'>
-			<Header />
+			<Header toggle={toggle} setToggle={setToggle}/>
 			<Switch>
 				<Route
 					exact
@@ -149,6 +152,8 @@ function App() {
 				/>
 			</Switch>
 		</div>
+    </div>
+    </div>
 	);
 }
 
