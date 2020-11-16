@@ -143,3 +143,26 @@ body{
         }
     }
 }
+
+form{
+    display: flex;
+    flex-direction: column;
+    h3{
+        font-family: $Zilla;
+        color: $lightblue;
+    }
+    input{
+        height: 40px;
+        border-radius: 10px;
+        border: 2px solid lightgrey;
+    }
+    input:last-of-type{
+        margin-top: 20px;
+        font-family: $Coda;
+        letter-spacing: -3px;
+        font-size: 23px;
+        color: white;
+        background-color: $red;
+        height: 60px;
+    }
+}
