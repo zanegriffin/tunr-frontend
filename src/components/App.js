@@ -88,9 +88,12 @@ function App() {
   };
 
   const deleteSong = (song) => {
-    fetch(url + '/songs/' + song._id, {
+    fetch(url + '/songs/' + song.id, {
       method: 'delete'
-    }).then(() => getSongs());
+    }).then(() => {
+      getSongs()
+      getFaves()
+    });
   };
 
   return (
