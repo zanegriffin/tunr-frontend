@@ -69,8 +69,8 @@ function App() {
       },
       body: JSON.stringify(song)
     }).then(() => {
-      getFaves()
       getSongs()
+      getFaves()
     })
   }
 
@@ -81,7 +81,10 @@ function App() {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(song)
-    }).then(() => getSongs());
+    }).then(() => {
+      getSongs()
+      getFaves()
+    });
   };
 
   const selectSong = (song) => {
